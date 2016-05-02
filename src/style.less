@@ -7,5 +7,67 @@
 }
 
 .background {
-	background-color: @shit-black;
+	background-color: @nice-blue;
+}
+
+img {
+	width: inherit;
+	height: inherit;
+}
+
+.transition-properties(...) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+.borders {
+  border-top: 3px solid blue;
+  .transition-properties(border-top .25s linear, color .5s linear;);
+}
+
+.borders:hover {
+  border-top: 8px solid green;
+}
+
+@-moz-keyframes spinClockwise { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spinClockwise { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spinClockwise { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spinCounter { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spinCounter { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spinCounter { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+.gearRotate(...) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+
+.gear1 {
+	height: 200px;
+	width: 200px;
+	margin-left: 0;
+	margin-top: 0;
+	position: absolute;
+	.gearRotate(spinClockwise 6s linear infinite paused);
+}
+
+.gear2 {
+	height: 150px;
+	width: 150px;
+	margin-left: 110px;
+	margin-top:160px;
+	position: absolute;
+	.gearRotate(spinCounter 4s linear infinite paused);
+}
+
+.gear3 {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	margin-left: 220px;
+	margin-top: 90px;
+	.gearRotate(spinClockwise 4s linear infinite paused);
 }

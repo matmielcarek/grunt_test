@@ -1,4 +1,4 @@
-html (lang="en")
+html(lang="en")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -8,10 +8,24 @@ html (lang="en")
 
     title = mmi testing
 
-    link(href="../build/style.css" rel="stylesheet")
+    //main CSS file
+    link(href="style.min.css" rel="stylesheet")
 
-body
-  div.background
-    p#header SHIT, IT WORKS!
+    //jquery
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
 
-    
+  body.background
+    div.borders
+      p#header SHIT, IT WORKS!
+
+    div.loading-mation
+      div.gear1
+        img(src='img/1.png')
+
+      div.gear2
+        img(src='img/1.png')
+
+      div.gear3
+        img(src='img/1.png')
+
+    script(src="project.min.js")
